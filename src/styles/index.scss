@@ -1,0 +1,13 @@
+@use './components';
+@use './pages';
+@use './abstracts';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: abstracts.$white;
+  background-color: abstracts.$navy-blue;
+}

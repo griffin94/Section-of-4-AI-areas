@@ -1,0 +1,102 @@
+@use '../../abstracts';
+
+$gap-mobile: 16px;
+$gap-desktop: 24px;
+
+.tiles {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-mobile;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: abstracts.$gray;
+  border-radius: abstracts.$rounding-mobile;
+
+  &__icon-container {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--purple {
+      background-color: abstracts.$purple-light;
+    }
+
+    &--yellow {
+      background-color: abstracts.$yellow-light;
+    }
+
+    &--mint {
+      background-color: abstracts.$mint-light;
+    }
+
+    &--pink {
+      background-color: abstracts.$pink-light;
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  &__heading {
+    margin: 16px 0;
+    line-height: 24px;
+  }
+
+  &__caption {
+    margin: 0;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: abstracts.$tablet) {
+  .tiles {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tile {
+    flex: 1 1 calc(50% - $gap-mobile / 2);
+    border-radius: abstracts.$rounding-tablet;
+  }
+}
+
+@media (min-width: abstracts.$desktop) {
+  .tiles {
+    gap: $gap-desktop;
+    flex-basis: 560px;
+    flex-shrink: 0;
+  }
+
+  .tile {
+    flex: 1 1 calc(50% - $gap-desktop / 2);
+    padding: 24px 16px;
+
+    &__icon-container {
+      width: 64px;
+      height: 64px;
+    }
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__caption {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use '../abstracts';
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.page-container {
+  max-width: 496px;
+
+  @media (min-width: abstracts.$desktop) {
+    & {
+      display: flex;
+      max-width: 1136px;
+      gap: 109px;
+    }
+  }
+}
