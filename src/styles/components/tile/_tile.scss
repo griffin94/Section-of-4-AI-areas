@@ -1,7 +1,8 @@
 @use '../../abstracts';
 
 $gap-mobile: 16px;
-$gap-desktop: 24px;
+$gap-desktop-x: 24px;
+$gap-desktop-y: 31px;
 
 .tiles {
   display: flex;
@@ -70,18 +71,19 @@ $gap-desktop: 24px;
   .tile {
     flex: 1 1 calc(50% - $gap-mobile / 2);
     border-radius: abstracts.$rounding-tablet;
+    padding: 20px 17px 20px 14px;
   }
 }
 
 @media (min-width: abstracts.$desktop) {
   .tiles {
-    gap: $gap-desktop;
+    gap: $gap-desktop-y $gap-desktop-x;
     flex-basis: 560px;
     flex-shrink: 0;
   }
 
   .tile {
-    flex: 1 1 calc(50% - $gap-desktop / 2);
+    flex: 1 1 calc(50% - $gap-desktop-x / 2);
     padding: 24px 16px;
 
     &__icon-container {
